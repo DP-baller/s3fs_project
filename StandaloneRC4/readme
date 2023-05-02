@@ -1,0 +1,20 @@
+This C program demonstrates how to encrypt and decrypt files using the RC4 cipher from the OpenSSL library. The program takes command-line arguments to specify the input file, output file, mode (encrypt or decrypt), and whether to use a salt with the key.
+
+Execution Steps:
+
+First, make sure you have the OpenSSL library installed on your system.
+
+Compile the code using GCC with the following command:
+gcc -o rc4_file_encryption rc4_file_encryption.c -lcrypto
+
+This command compiles the code and creates an executable named "rc4_file_encryption".
+======================================================================================================
+Example Usage:
+
+To encrypt a file, use the following command:
+./rc4_file_encryption input_file.txt encrypted_file.bin -e -salt mypassword
+
+To decrypt a file, use the following command:
+./rc4_file_encryption encrypted_file.bin decrypted_file.txt -d -salt mypassword
+
+In these examples, "input_file.txt" is the file to be encrypted, "encrypted_file.bin" is the output encrypted file, "decrypted_file.txt" is the output decrypted file, and "mypassword" is the encryption/decryption key. The "-e" flag indicates encryption mode, and the "-d" flag indicates decryption mode. The "-salt" flag indicates that a salt should be used in the key derivation process, while the "-nosalt" flag indicates that no salt should be used.
